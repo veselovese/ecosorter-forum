@@ -1,0 +1,485 @@
+* {
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-display: swap; 
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/unbounded-v7-latin-regular.woff2') format('woff2'); 
+  }
+
+  @font-face {
+    font-display: swap; 
+    font-family: 'Unbounded';
+    font-style: normal;
+    font-weight: 600;
+    src: url('../fonts/unbounded-v7-latin-600.woff2') format('woff2');
+  }
+
+:root {
+    --background: #E7ECEF;
+    --header-background: #FC7A1E;
+    --input-border: #485696;
+    --text-color: #2A0800;
+    --link-color: #485696;
+    font-size: 62.5%;
+}
+
+body {
+    font-family: Unbounded, sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--background);
+    color: var(--text-color);
+    margin: 0;
+}
+
+main {
+    max-width: 120rem;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+header {
+    width: 100%;
+    background-color: var(--header-background);
+    margin: 0;
+    padding: 2.5rem 5.0rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+}
+
+section {
+    width: 100%;
+    margin-top: 10rem;
+}
+
+header div {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+h1 { 
+    font-size: 4.1rem;
+    margin: 2rem 0;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 2rem 0;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+a {
+    text-decoration: none;
+    color: var(--link-color);
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+a:hover {
+    color: var(--text-color);
+}
+
+label{
+    font-weight: 600;
+}
+
+.singup-form {
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    gap: 2rem;
+}
+
+.singin-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.singin-form-inputs {
+    display: flex;
+    gap: 5rem;
+    padding-left: 8.5rem;
+}
+
+.singin-form-inputs div {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    min-width: 36.2rem;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+}
+
+.nav-post__list {
+    display: flex;
+    gap: 15px;
+}
+
+.nav-link {
+    color: var(--link-color);
+    background-color: var(--header-background);
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.hed-link-singup {
+    color: var(--link-color);
+    font-weight: 400;
+    max-width: 15rem;
+    max-height: 5rem;
+    border: 0.2rem solid var(--link-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    padding: 1.5rem 4.14rem;
+}
+
+.hed-link-singup:hover {
+    border: 0.2rem solid var(--text-color);
+    color: var(--text-color);
+}
+
+.hed-link-singin {
+    color: var(--link-color);
+    font-weight: 400;
+    transition: 0.2s;
+}
+
+.singup {
+    min-width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+#buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2.4rem;
+    align-items: center;
+    flex-direction: row;
+    gap: 2rem;
+}
+
+#buttons a {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+button {
+    width: 100%;
+    min-height: 5rem;
+    font-family: Unbounded, sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--background);
+    border: 0.2rem solid var(--text-color);
+    padding-top: 0.4rem;
+    color: var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    color: var(--header-background);
+    border: 0.2rem solid var(--header-background);
+}
+
+button:active {
+    background-color: #FC7A1E25;
+    transform: scale(95%);
+}
+
+input {
+    width: 100%;
+    min-height: 5rem;
+    font-family: Unbounded, sans-serif;
+    font-size: 1.6rem;
+    background-color: var(--background);
+    border: 2px solid var(--text-color);
+    border-radius: 10px;
+    margin-top: 0.5rem;
+    padding: 0 2rem;
+    padding-top: 0.3rem;
+    transition: 0.2s;
+
+}
+
+input:hover {
+    border: 2px solid var(--input-border);
+}
+
+input:hover::placeholder {
+    color: #48569650;
+}
+
+input:focus {
+    border: 2px solid var(--input-border);
+    outline: none;
+}
+
+input:focus::placeholder {
+    color: #48569650;
+}
+
+input:invalid {
+    color: var(--input-border);
+}
+
+input:valid {
+    border: 2px solid var(--header-background);
+    color: var(--header-background);
+}
+
+::placeholder {
+    font-family: Unbounded, sans-serif;
+    font-size: 1.6rem;
+    color: #2A080050;
+    transition: 0.2s;
+}
+
+textarea {
+    background-color: var(--header-background);
+    border: 2px solid var(--input-border);
+    border-radius: 10px;
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.wrapper {
+    display: flex;
+    gap: 20px;
+}
+
+.post {
+    display: flex;
+    border-radius: 1rem;
+    margin-top: 5rem;
+}
+
+.news-line__user {
+    font-weight: 600;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.news-line__list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.news-line__message {
+    margin: 0.5rem 0 1rem;
+}
+
+.news-line__hashtag {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.news-line__item {
+    background-color: var(--header-background);
+    padding: 2rem;
+    border-radius: 1rem;
+    width: 50rem;
+    transition: 0.2s;
+    cursor: pointer;
+}
+
+.news-line__item:hover {
+    transform: scale(105%);
+}
+
+.news-line {
+    margin: 0;
+}
+
+.news-line div {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.singup-lastpost {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.p {
+    margin: 0;
+    font-weight: 600;
+}
+
+.singup-lastpost a {
+    font-weight: 400;
+    font-size: 1rem;
+}
+
+.error-message {
+    margin: 0;
+}
+
+.message {
+    margin: 0;
+}
+
+.prof-name {
+    font-size: 2.6rem;
+    font-weight: 600;
+    margin: 0;
+}
+
+.prof-login {
+    margin: 1rem 0 2.5rem;
+}
+
+.prof {
+    display: flex;
+    justify-content: space-around;
+}
+
+.prof-left a {
+    display: block;
+    max-height: 5rem;
+    border: 0.2rem solid var(--text-color);
+    padding: 1.5rem 3rem;
+    color: var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    max-width: max-content;
+}
+
+.prof-left a:hover {
+    color: var(--header-background);
+    border: 0.2rem solid var(--header-background);
+
+}
+
+.prof-left div {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.post__list {
+    display: flex;
+    gap: 5rem;
+}
+
+.post__link {
+    color: var(--text-color);
+    padding: 1.6rem 3rem 1.4rem;
+    transition: 0.2;
+    border-radius: 1rem;
+    border: 2px solid var(--background);
+}
+
+.post__link:hover {
+    color: var(--text-color);
+    border: 2px solid var(--text-color);
+}
+
+.active {
+    color: var(--header-background) !important;
+    border: 2px solid var(--header-background) !important;
+
+}
+
+.view-add {
+    display: block;
+    max-height: 5rem;
+    border: 0.2rem solid var(--text-color);
+    padding: 1.5rem 3rem;
+    color: var(--text-color);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+    max-width: max-content;
+    margin-top: 2rem;
+}
+
+.view-add:hover {
+    color: var(--header-background);
+    border: 0.2rem solid var(--header-background);
+
+}
+
+.add-form div {
+    display: block;
+}
+
+.add-form div textarea {
+    background-color: var(--background);
+    border: 2px solid var(--text-color);
+    padding: 2rem;
+    width: 100%;
+    min-height: 5rem;
+    transition: 0.5s;
+    font-family: Unbounded, sans-serif;
+    font-size: 1.6rem;
+}
+
+.add-form div textarea:hover {
+    border: 2px solid var(--input-border);
+    min-height: 10rem;
+}
+
+.add-form div textarea:hover::placeholder {
+    color: #48569650;
+}
+
+.add-form div textarea:focus {
+    outline: none;
+    border: 2px solid var(--input-border);
+    min-height: 20rem;
+}
+
+.add-form div textarea:user-valid {
+    border: 2px solid var(--header-background);
+    min-height: 20rem;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+#add-post {
+    margin-top: 2rem;
+    display: block
+}
