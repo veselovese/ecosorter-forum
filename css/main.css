@@ -307,7 +307,7 @@ textarea {
 
 .reply-line__reply {
     margin-top: 1rem;
-    color: var(--text-color);
+    color: #2A080075;
     font-weight: 400;
     transition: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
     line-height: 135%;
@@ -361,7 +361,7 @@ textarea {
 } */
 
 .reply-line__item {
-    border: 2px solid var(--text-color);
+    border: 2px solid #2A080075;
     border-radius: 0 1rem 1rem 1rem;
     max-width: 50rem;
     transition: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
