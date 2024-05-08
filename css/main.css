@@ -217,7 +217,7 @@ button {
     min-height: 5rem;
     font-family: Unbounded, sans-serif;
     font-size: 1.6rem;
-    background-color: var(--background);
+    background-color: transparent;
     border: 0.2rem solid var(--text-color);
     padding-top: 0.4rem;
     color: var(--text-color);
@@ -268,13 +268,8 @@ input:focus::placeholder {
     color: #48569650;
 }
 
-input:invalid {
+input:user-invalid {
     color: var(--input-border);
-}
-
-input:valid {
-    border: 2px solid var(--header-background);
-    color: var(--header-background);
 }
 
 ::placeholder {
@@ -290,6 +285,7 @@ textarea {
     border-radius: 10px;
     margin-top: 5px;
     padding: 5px;
+    resize: none
 }
 
 /* .wrapper {
@@ -359,9 +355,9 @@ textarea {
     cursor: pointer;
 }
 
-.news-line__item:hover {
+/* .news-line__item:hover {
     transform: scale(105%);
-}
+} */
 
 .reply-line__item {
     border: 2px solid var(--text-color);
@@ -510,7 +506,7 @@ textarea {
     padding: 2rem;
     width: 100%;
     min-height: 5rem;
-    transition: 0.5s;
+    transition: 2s;
     font-family: Unbounded, sans-serif;
     font-size: 1.6rem;
 }
@@ -518,6 +514,7 @@ textarea {
 .add-form div textarea:hover {
     border: 2px solid var(--input-border);
     min-height: 10rem;
+    transition: 0.5s;
 }
 
 .add-form div textarea:hover::placeholder {
@@ -528,6 +525,7 @@ textarea {
     outline: none;
     border: 2px solid var(--input-border);
     min-height: 20rem;
+    transition: 0.5s;
 }
 
 .add-form div textarea:user-valid {
@@ -544,4 +542,65 @@ textarea {
 #add-post {
     margin-top: 2rem;
     display: block
+}
+
+.news-line__form {
+    display: flex;
+    margin-top: 2rem;
+    gap: 1rem;
+}
+
+.news-line__input {
+    background-color: var(--background);
+    font-family: Unbounded, sans-serif;
+    font-size: 1rem;
+    border-radius: 0.75rem;
+    min-height: 3rem;
+    height: 3rem;
+    font-size: 1rem;
+    max-width: 10rem;
+    padding: 1rem 1rem 0.9rem;
+    margin: 0;
+    border: none;
+    transition: 2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    width: 100%;
+}
+
+.news-line__input:hover {
+    max-width: 33%;
+    transition: 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+    border: none;
+}
+
+.news-line__input:focus {
+    max-width: 66%;
+    height: 5rem;
+    transition: 2s;
+    outline: none;
+}
+
+.news-line__input:focus + button {
+    width: 33%;
+    transition: 2s;
+}
+
+.news-line__input::placeholder {
+    font-size: 1rem;
+}
+
+.news-line__button {
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    min-height: 3rem;
+    height: 3rem;
+    padding: 0 1rem;
+    border: 2px solid #2A080050;
+    color: #2A080050;
+    transition: 2s;
+}
+
+.news-line__button:hover {
+    border: 2px solid #2A0800;
+    color: #2A0800;
+    transition: 0.2s;
 }
