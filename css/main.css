@@ -581,7 +581,13 @@ textarea {
 
 .news-line__input:focus + button {
     width: 33%;
-    transition: 2s;
+    border: 2px solid #2A0800;
+    color: #2A0800;
+}
+
+.news-line__input:focus + button:hover {
+    border: 2px solid #2A080075;
+    color: #2A080075;  
 }
 
 .news-line__input::placeholder {
@@ -600,7 +606,7 @@ textarea {
 }
 
 .news-line__button:hover {
-    border: 2px solid #2A0800;
-    color: #2A0800;
+    border: 2px solid #2A080075;
+    color: #2A080075;
     transition: 0.2s;
 }

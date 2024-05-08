@@ -74,10 +74,11 @@ session_start();
               echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
               echo "<p class='news-line__message'>" . $message . "</p>";
               echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
-              echo "<div class='news-line__form'>";
-              echo "<textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..'></textarea>";
+              echo "<form class='news-line__form' action='reply.php' method='post'>";
+              echo "<textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..' required></textarea>";
               echo "<button class='news-line__button' type='submit'>Отправить</button>";
-              echo "</div>";
+              echo "<input type='hidden' name='reply_id' value='$i'>";
+              echo "</form>";
               echo "</div>";
               $sql_reply = "SELECT replies.description AS reply, users.login AS replier, replies.reply_id AS who
               FROM replies
