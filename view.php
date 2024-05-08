@@ -46,7 +46,7 @@ session_start();
       </ul>
     </section>
     <section class="news-line section wrapper">
-      <div>
+      <div class="new-line-div">
         <ul class="news-line__list">
           <?php
           require('connect.php');
@@ -56,23 +56,44 @@ session_start();
             $channel = $_GET['channel'];
           }
           $channel_condition = $channel !== 'all' ? "AND channels.name = '$channel'" : '';
-          $sql = "SELECT hashtags.name AS hashtag_name, posts.description AS message, users.login AS sender
+          $sql_post = "SELECT hashtags.name AS hashtag_name, posts.description AS message, users.login AS sender, posts.id AS i
                   FROM posts
                   JOIN hashtags ON posts.hashtag_id = hashtags.id
                   JOIN users ON posts.user_id = users.id
                   LEFT JOIN channels ON posts.channel_id = channels.id
                   WHERE posts.save = 0 $channel_condition";
-          $result = $connect->query($sql);
-          if ($result->num_rows > 0) {
-            while ($row = $result->fetch_assoc()) {
-              $hashtag_name = $row["hashtag_name"];
-              $message = $row["message"];
-              $sender = $row["sender"];
-              echo "<li class='news-line__item'>";
+          $result_post = $connect->query($sql_post);
+          if ($result_post->num_rows > 0) {
+            while ($row_post = $result_post->fetch_assoc()) {
+              $hashtag_name = $row_post["hashtag_name"];
+              $message = $row_post["message"];
+              $sender = $row_post["sender"];
+              $i = $row_post['i'];
+              echo "<li class='news-line__item__li'>";
+              echo "<div class='news-line__item'>";
               echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
               echo "<p class='news-line__message'>" . $message . "</p>";
               echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
-              echo "</li>";
+              echo "</div>";
+              $sql_reply = "SELECT replies.description AS reply, users.login AS replier, replies.reply_id AS who
+              FROM replies
+              JOIN users ON replies.user_id = users.id
+              JOIN posts ON replies.reply_id = posts.id
+              WHERE replies.reply_id = " . $i;
+              $result_reply = $connect->query($sql_reply);
+              if ($result_reply->num_rows > 0){
+                echo "<ul class='reply-line__list'>";
+                while ($row_reply = $result_reply->fetch_assoc()){
+                  $replier = $row_reply['replier'];
+                  $reply = $row_reply['reply'];
+                  echo "<li class='reply-line__item'>";
+                  echo "<p class='reply-line__replier'>@" . $replier . ": ";
+                  echo "<span class='reply-line__reply'>" . $reply . "</span></p>";
+                  echo "</li>";
+                  }
+                  echo "</ul>";
+                }
+                echo "</li>";
             }
           } else {
             echo "<p style='font-size: 1.6rem;'>Постов ещё нет</p>";
