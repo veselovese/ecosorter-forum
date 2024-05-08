@@ -29,7 +29,7 @@ session_start();
     </div>
   </header>
   <main>
-    <section class="post">
+    <section class="post section wrapper">
       <ul class="post__list">
         <li class="post__item">
           <a class="post__link <?php if ($_GET['channel'] == 'all') echo 'active'; ?>" href="view.php?channel=all">Все</a>
@@ -45,7 +45,7 @@ session_start();
         </li>
       </ul>
     </section>
-    <section class="news-line">
+    <section class="news-line section wrapper">
       <div>
         <ul class="news-line__list">
           <?php
@@ -103,8 +103,7 @@ session_start();
       </div>
     </section>
   </main>
-  <footer>
-  </footer>
+  <?php require('footer.php'); ?>
 </body>
 
 </html>

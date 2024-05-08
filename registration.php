@@ -28,7 +28,7 @@
     </header>
 
     <main>
-        <section>
+        <section class="section wrapper">
         <form class="singin-form" action="signup.php" method="post">
             <div class="singin-form-inputs">
             <div>
@@ -66,6 +66,7 @@
         </form>
         </section>
     </main>
+    <?php require('footer.php'); ?>
 </body>
 
 </html>

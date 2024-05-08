@@ -25,6 +25,12 @@
     --text-color: #2A0800;
     --link-color: #485696;
     font-size: 62.5%;
+    height: 100%
+}
+
+.wrapper {
+    max-width: 120rem;
+    margin: 0 auto;
 }
 
 body {
@@ -33,15 +39,17 @@ body {
     background-color: var(--background);
     color: var(--text-color);
     margin: 0;
+    display: flex;
+	flex-direction: column;
+	min-height: 100%;
 }
 
 main {
-    max-width: 120rem;
-    margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 15px;
+    flex: 1 0 auto;
 }
 
 header {
@@ -55,7 +63,13 @@ header {
     gap: 15px;
 }
 
-section {
+footer {
+    font-size: 1rem;
+    flex: 0 0 auto;
+    padding: 2.5rem 5rem 1rem;
+}
+
+.section {
     width: 100%;
     margin-top: 10rem;
 }
@@ -278,10 +292,10 @@ textarea {
     padding: 5px;
 }
 
-.wrapper {
+/* .wrapper {
     display: flex;
     gap: 20px;
-}
+} */
 
 .post {
     display: flex;

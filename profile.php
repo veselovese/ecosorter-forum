@@ -29,7 +29,7 @@
     </header>
 
     <main>
-        <section>
+        <section class="section wrapper">
             <div class="prof">
             <div class="prof-left">
         <p class="prof-name"><?= $_SESSION['user']['name'] ?></p>
@@ -78,7 +78,7 @@
         </div>
         </section>
     </main>
-
+    <?php require('footer.php'); ?>
 </body>
 
 </html>

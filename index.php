@@ -29,7 +29,7 @@
     </header>
 
     <main>
-        <section>
+        <section class="section wrapper">
             <div class="singup">
                 <form class="singup-form" action="login.php" method="post">
                     <label>Логин
