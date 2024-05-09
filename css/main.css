@@ -262,14 +262,16 @@ input:hover::placeholder {
 input:focus {
     border: 2px solid var(--input-border);
     outline: none;
+    color: var(--input-border);
 }
 
 input:focus::placeholder {
     color: #48569650;
 }
 
-input:user-invalid {
-    color: var(--input-border);
+input:valid {
+    color: var(--header-background);
+    border: 2px solid var(--header-background);
 }
 
 ::placeholder {
@@ -335,6 +337,7 @@ textarea {
     max-width: 100%;
     gap: 1rem;
     padding-bottom: 1rem;
+    padding-left: 2rem;
 }
 
 .news-line__message {
@@ -349,7 +352,7 @@ textarea {
 .news-line__item {
     background-color: var(--header-background);
     padding: 2rem;
-    border-radius: 1rem;
+    border-radius: 2rem;
     width: 100%;
     min-width: 50rem;
     transition: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -530,7 +533,7 @@ textarea {
     transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
-.add-form div textarea:user-valid {
+.add-form div textarea:valid {
     border: 2px solid var(--header-background);
     min-height: 20rem;
 }
@@ -550,18 +553,19 @@ textarea {
     display: flex;
     margin-top: 2rem;
     gap: 1rem;
+    cursor: default;
 }
 
 .news-line__input {
     background-color: var(--background);
     font-family: Unbounded, sans-serif;
     font-size: 1rem;
-    border-radius: 0.75rem;
+    border-radius: 1.5rem;
     min-height: 3rem;
     height: 3rem;
     font-size: 1rem;
-    max-width: 10rem;
-    padding: 1rem 1rem 0.9rem;
+    max-width: 10.5rem;
+    padding: 1rem 1.5rem 0.9rem;
     margin: 0;
     border: none;
     transition: 2s cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -575,21 +579,42 @@ textarea {
 }
 
 .news-line__input:focus {
-    max-width: 66%;
-    height: 5rem;
+    max-width: 75%;
     transition: 2s cubic-bezier(0.22, 0.61, 0.36, 1);
     outline: none;
+    border-radius: 1.5rem;
+}
+
+.news-line__input:valid {
+    max-width: 75%;
+    border-radius: 1.5rem;
+}
+
+.news-line__input:valid + button {
+    width: 25%;
+    border: 2px solid transparent;
+    color: #2A080050;
+    opacity: 100%;
+    pointer-events: all;
 }
 
 .news-line__input:focus + button {
-    width: 33%;
-    border: 2px solid #2A0800;
-    color: #2A0800;
+    width: 25%;
+    border: 2px solid transparent;
+    color: #2A080050;
+    background-color: var(--background);
 }
 
 .news-line__input:focus + button:hover {
-    border: 2px solid #2A080075;
-    color: #2A080075;  
+    border: 2px solid transparent;
+    color: var(--text-color);
+    transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.news-line__input:valid + button:hover {
+    border: 2px solid transparent;
+    color: var(--text-color);
+    transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .news-line__input::placeholder {
@@ -597,18 +622,21 @@ textarea {
 }
 
 .news-line__button {
-    border-radius: 0.75rem;
+    pointer-events: none;
+    opacity: 0;
+    border-radius: 1.5rem;
     font-size: 1rem;
     min-height: 3rem;
     height: 3rem;
-    padding: 0 1rem;
-    border: 2px solid #2A080050;
+    padding: 0.1rem 1rem 0;
+    border: 2px solid transparent;
     color: #2A080050;
+    background-color: var(--background);
     transition: 2s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .news-line__button:hover {
-    border: 2px solid #2A080075;
-    color: #2A080075;
-    transition: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
+    border: 2px solid transparent;
+    color: var(--text-color);
+    transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }

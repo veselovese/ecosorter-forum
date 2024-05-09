@@ -76,7 +76,7 @@ session_start();
               echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
               echo "<form class='news-line__form' action='reply.php' method='post'>";
               echo "<textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..' required></textarea>";
-              echo "<button class='news-line__button' type='submit'>Отправить</button>";
+              echo "<button class='news-line__button' type='submit'>Ответить</button>";
               echo "<input type='hidden' name='reply_id' value='$i'>";
               echo "</form>";
               echo "</div>";
