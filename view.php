@@ -10,12 +10,17 @@ session_start();
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
   <title>Посты</title>
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="apple-touch-icon" sizes="180x180" href="pic/icon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="pic/icon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="pic/icon/favicon-16x16.png">
+  <link rel="manifest" href="pic/icon/site.webmanifest">
 </head>
 
 <body>
   <header>
     <div>
-      <h1>Twittort</h1>
+      <a class="logo" href="view.php?channel=all">Twittort</a>
       <nav>
         <?php if (!isset($_SESSION['user'])) { ?>
           <a class="hed-link-singin" href="registration.php">Зарегистрироваться</a>
@@ -86,19 +91,19 @@ session_start();
               JOIN posts ON replies.reply_id = posts.id
               WHERE replies.reply_id = " . $i;
               $result_reply = $connect->query($sql_reply);
-              if ($result_reply->num_rows > 0){
+              if ($result_reply->num_rows > 0) {
                 echo "<ul class='reply-line__list'>";
-                while ($row_reply = $result_reply->fetch_assoc()){
+                while ($row_reply = $result_reply->fetch_assoc()) {
                   $replier = $row_reply['replier'];
                   $reply = $row_reply['reply'];
                   echo "<li class='reply-line__item'>";
                   echo "<p class='reply-line__replier'>@" . $replier . ": ";
                   echo "<span class='reply-line__reply'>" . $reply . "</span></p>";
                   echo "</li>";
-                  }
-                  echo "</ul>";
                 }
-                echo "</li>";
+                echo "</ul>";
+              }
+              echo "</li>";
             }
           } else {
             echo "<p style='font-size: 1.6rem;'>Постов ещё нет</p>";

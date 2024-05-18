@@ -1,20 +1,25 @@
 <?php
-    session_start();
+session_start();
 ?>
-    
+
 <!doctype html>
 <html lang="ru">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Twittort</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="pic/icon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="pic/icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="pic/icon/favicon-16x16.png">
+    <link rel="manifest" href="pic/icon/site.webmanifest">
 </head>
 
 <body>
     <header>
         <div>
-            <h1>Twittort</h1>
+            <a class="logo" href="index.php">Twittort</a>
             <nav>
                 <?php if (!isset($_SESSION['user'])) { ?>
                     <a class="hed-link-singin" href="./registration.php">Зарегистрироваться</a>
@@ -41,19 +46,19 @@
                     <div id="buttons">
                         <button type="submit">Войти</button>
                         <a href="registration.php">Зарегистрироваться</a>
-                    </div>    
+                    </div>
                     <?php
-                        if (isset($_SESSION['message'])) {
-                            echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
-                            unset($_SESSION['message']);
-                        }
+                    if (isset($_SESSION['message'])) {
+                        echo '<p class="msg"> ' . $_SESSION['message'] . ' </p>';
+                        unset($_SESSION['message']);
+                    }
                     ?>
                 </form>
                 <div class="singup-lastpost">
                     <p class="p">Последний пост</p>
-                <?php
+                    <?php
                     require('connect.php');
-                    if (!isset($_GET['channel'])){
+                    if (!isset($_GET['channel'])) {
                         $channel = 'all';
                     } else {
                         $channel = $_GET['channel'];
@@ -69,24 +74,25 @@
                     $result = $connect->query($sql);
                     if ($result->num_rows > 0) {
                         if ($row = $result->fetch_assoc()) {
-                        $hashtag_name = $row["hashtag_name"];
-                        $message = $row["message"];
-                        $sender = $row["sender"];
-                        echo "<div class='news-line__item'>";
-                        echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
-                        echo "<p class='news-line__message'>" . $message . "</p>";
-                        echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
-                        echo "</div>";
+                            $hashtag_name = $row["hashtag_name"];
+                            $message = $row["message"];
+                            $sender = $row["sender"];
+                            echo "<div class='news-line__item'>";
+                            echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
+                            echo "<p class='news-line__message'>" . $message . "</p>";
+                            echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
+                            echo "</div>";
                         }
                     } else {
                         echo "<p style='font-size: 2rem;'>Нет сообщений.</p>";
                     }
-                ?>
-                <a href="view.php?channel=all">Все посты</a>
+                    ?>
+                    <a href="view.php?channel=all">Все посты</a>
                 </div>
             </div>
         </section>
     </main>
     <?php require('footer.php'); ?>
 </body>
+
 </html>

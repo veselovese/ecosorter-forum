@@ -80,9 +80,15 @@ header div {
     justify-content: space-between;
 }
 
-h1 { 
+.logo { 
     font-size: 4.1rem;
     margin: 2rem 0;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.logo:hover {
+    opacity: 80%;
 }
 
 ul {
@@ -352,9 +358,10 @@ textarea {
 .news-line__item {
     background-color: var(--header-background);
     padding: 2rem;
-    border-radius: 2rem;
+    border-radius: 1rem;
     width: 100%;
     min-width: 50rem;
+    max-width: 57.5rem;
     transition: 0.2s cubic-bezier(0.22, 0.61, 0.36, 1);
     cursor: pointer;
 }
@@ -382,7 +389,7 @@ textarea {
 }
 
 .reply-line__item:hover .reply-line__reply{
-    color: var(--header-background);
+    color: var(--text-color);
 }
 
 .news-line {
@@ -551,6 +558,7 @@ textarea {
 
 .news-line__form {
     display: flex;
+    justify-content: space-between;
     margin-top: 2rem;
     gap: 1rem;
     cursor: default;
@@ -582,39 +590,41 @@ textarea {
     max-width: 75%;
     transition: 2s cubic-bezier(0.22, 0.61, 0.36, 1);
     outline: none;
-    border-radius: 1.5rem;
 }
 
 .news-line__input:valid {
     max-width: 75%;
-    border-radius: 1.5rem;
+
 }
 
 .news-line__input:valid + button {
-    width: 25%;
-    border: 2px solid transparent;
-    color: #2A080050;
+    width: 23%;
+    color: var(--text-color);
     opacity: 100%;
     pointer-events: all;
+    border: transparent;
 }
 
 .news-line__input:focus + button {
-    width: 25%;
-    border: 2px solid transparent;
-    color: #2A080050;
+    width: 23%;
+    color: var(--text-color);
     background-color: var(--background);
 }
 
 .news-line__input:focus + button:hover {
-    border: 2px solid transparent;
+    opacity: 80%;
     color: var(--text-color);
-    transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 .news-line__input:valid + button:hover {
-    border: 2px solid transparent;
+    opacity: 80%;
     color: var(--text-color);
-    transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.news-line__input:valid + button:active {
+    opacity: 80%;
+    color: var(--text-color);
+    background-color: var(--background);
 }
 
 .news-line__input::placeholder {
@@ -628,15 +638,10 @@ textarea {
     font-size: 1rem;
     min-height: 3rem;
     height: 3rem;
+    max-width: 23%;
     padding: 0.1rem 1rem 0;
-    border: 2px solid transparent;
-    color: #2A080050;
-    background-color: var(--background);
-    transition: 2s cubic-bezier(0.22, 0.61, 0.36, 1);
-}
-
-.news-line__button:hover {
-    border: 2px solid transparent;
     color: var(--text-color);
+    border: transparent;
+    background-color: var(--background);
     transition: 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
