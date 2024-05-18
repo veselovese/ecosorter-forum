@@ -34,4 +34,4 @@ foreach ($hashtags as $hashtag) {
     }
 }
 
-header('Location: view.php?channel=all');
+header('Location: ./view?channel=all');

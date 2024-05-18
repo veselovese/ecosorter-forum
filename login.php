@@ -17,11 +17,11 @@
             "email" => $user['email']
         ];
 
-        header('Location: ./profile.php');
+        header('Location: ./profile');
 
     } else {
         $_SESSION['message'] = 'Неверный логин или пароль';
-        header('Location: ./index.php');
+        header('Location: ./');
     }
     ?>
 

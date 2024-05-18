@@ -20,14 +20,14 @@ session_start();
 <body>
     <header>
         <div>
-            <a class="logo" href="index.php">Twittort</a>
+            <a class="logo" href="./">Twittort</a>
             <nav>
                 <?php if (!isset($_SESSION['user'])) { ?>
-                    <a class="hed-link-singin" href="./registration.php">Зарегистрироваться</a>
-                    <a class="hed-link-singup" href="./index.php">Войти</a>
+                    <a class="hed-link-singin" href="./registration">Зарегистрироваться</a>
+                    <a class="hed-link-singup" href="./">Войти</a>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <a class="hed-link" href="./profile.php">Профиль</a>
+                    <a class="hed-link" href="./profile">Профиль</a>
                 <?php } ?>
             </nav>
         </div>
@@ -35,7 +35,7 @@ session_start();
 
     <main>
         <section class="section wrapper">
-            <form class="singin-form" action="signup.php" method="post">
+            <form class="singin-form" action="./signup" method="post">
                 <div class="singin-form-inputs">
                     <div>
                         <label>Имя:
@@ -57,7 +57,7 @@ session_start();
                         </label>
                         <div id="buttons">
                             <button type="submit">Зарегистрироваться</button>
-                            <a class="link" href="index.php">Войти</a>
+                            <a class="link" href="./">Войти</a>
                         </div>
                     </div>
                     <div>

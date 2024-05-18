@@ -20,15 +20,15 @@ session_start();
 <body>
   <header>
     <div>
-      <a class="logo" href="view.php?channel=all">Twittort</a>
+      <a class="logo" href="./view?channel=all">Twittort</a>
       <nav>
         <?php if (!isset($_SESSION['user'])) { ?>
-          <a class="hed-link-singin" href="registration.php">Зарегистрироваться</a>
-          <a class="hed-link-singup" href="index.php">Войти</a>
+          <a class="hed-link-singin" href="./registration">Зарегистрироваться</a>
+          <a class="hed-link-singup" href="./index">Войти</a>
         <?php } ?>
         <?php if (isset($_SESSION['user'])) { ?>
-          <a class="hed-link-singin" href="profile.php">@<?= $_SESSION['user']['login'] ?></a>
-          <a class="hed-link-singup" href="logout.php">Выйти</a>
+          <a class="hed-link-singin" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
+          <a class="hed-link-singup" href="./logout">Выйти</a>
         <?php } ?>
       </nav>
     </div>
@@ -79,7 +79,7 @@ session_start();
               echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
               echo "<p class='news-line__message'>" . $message . "</p>";
               echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
-              echo "<form class='news-line__form' action='reply.php' method='post'>";
+              echo "<form class='news-line__form' action='./reply' method='post'>";
               echo "<textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..' required></textarea>";
               echo "<button class='news-line__button' type='submit'>Ответить</button>";
               echo "<input type='hidden' name='reply_id' value='$i'>";
@@ -111,11 +111,11 @@ session_start();
           ?>
         </ul>
         <?php if (!isset($_SESSION['user'])) { ?>
-          <p>Чтобы написать пост, надо <a class="" href="index.php">войти</a></p>
+          <p>Чтобы написать пост, надо <a class="" href="./">войти</a></p>
         <?php } ?>
         <?php if (isset($_SESSION['user'])) { ?>
           <div id="add-post">
-            <form class="add-form" action="add.php" method="post">
+            <form class="add-form" action="./add" method="post">
               <div>
                 <label>Пост
                   <textarea name="post" class="message__txt" placeholder="Ел сегодня пельмени.." required></textarea>

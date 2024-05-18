@@ -8,4 +8,4 @@ $reply_id = $_POST['reply_id'];
 
 mysqli_query($connect, "INSERT INTO `replies` (`id`, `reply_id`, `user_id`, `description`) VALUES (NULL, $reply_id, '$user_id', '$reply')");
 
-header('Location: view.php?channel=all');
+header('Location: view?channel=all');

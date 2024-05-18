@@ -19,15 +19,15 @@ session_start();
 <body>
     <header>
         <div>
-            <a class="logo" href="index.php">Twittort</a>
+            <a class="logo" href="./">Twittort</a>
             <nav>
                 <?php if (!isset($_SESSION['user'])) { ?>
-                    <a class="hed-link-singin" href="./registration.php">Зарегистрироваться</a>
-                    <a class="hed-link-singup" href="./index.php">Войти</a>
+                    <a class="hed-link-singin" href="./registration">Зарегистрироваться</a>
+                    <a class="hed-link-singup" href="./">Войти</a>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <a class="hed-link-singin" href="profile.php">@<?= $_SESSION['user']['login'] ?></a>
-                    <a class="hed-link-singup" href="logout.php">Выйти</a>
+                    <a class="hed-link-singin" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
+                    <a class="hed-link-singup" href="./logout">Выйти</a>
                 <?php } ?>
             </nav>
         </div>
@@ -36,7 +36,7 @@ session_start();
     <main>
         <section class="section wrapper">
             <div class="singup">
-                <form class="singup-form" action="login.php" method="post">
+                <form class="singup-form" action="./login" method="post">
                     <label>Логин
                         <input type="text" name="login" placeholder="Введите логин" required>
                     </label>
@@ -45,7 +45,7 @@ session_start();
                     </label>
                     <div id="buttons">
                         <button type="submit">Войти</button>
-                        <a href="registration.php">Зарегистрироваться</a>
+                        <a href="./registration">Зарегистрироваться</a>
                     </div>
                     <?php
                     if (isset($_SESSION['message'])) {
@@ -87,7 +87,7 @@ session_start();
                         echo "<p style='font-size: 2rem;'>Нет сообщений.</p>";
                     }
                     ?>
-                    <a href="view.php?channel=all">Все посты</a>
+                    <a href="./view?channel=all">Все посты</a>
                 </div>
             </div>
         </section>

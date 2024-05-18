@@ -20,15 +20,15 @@ session_start();
 <body>
     <header>
         <div>
-            <a class="logo" href="view.php?channel=all">Twittort</a>
+            <a class="logo" href="./view?channel=all">Twittort</a>
             <nav>
                 <?php if (!isset($_SESSION['user'])) { ?>
-                    <a class="hed-link-singin" href="./registration.php">Зарегистрироваться</a>
-                    <a class="hed-link-singup" href="./index.php">Войти</a>
+                    <a class="hed-link-singin" href="./registration">Зарегистрироваться</a>
+                    <a class="hed-link-singup" href="./">Войти</a>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <a class="hed-link-singin" href="profile.php">@<?= $_SESSION['user']['login'] ?></a>
-                    <a class="hed-link-singup" href="logout.php">Выйти</a>
+                    <a class="hed-link-singin" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
+                    <a class="hed-link-singup" href="./logout">Выйти</a>
                 <?php } ?>
             </nav>
         </div>
@@ -41,7 +41,7 @@ session_start();
                     <p class="prof-name"><?= $_SESSION['user']['name'] ?></p>
                     <p class="prof-login">@<?= $_SESSION['user']['login'] ?></p>
                     <div>
-                        <a href="view.php?channel=all">Написать пост</a>
+                        <a href="./view?channel=all">Написать пост</a>
                     </div>
                 </div>
                 <div class="prof-right">
