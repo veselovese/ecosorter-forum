@@ -24,7 +24,7 @@ session_start();
       <nav>
         <?php if (!isset($_SESSION['user'])) { ?>
           <a class="hed-link-singin" href="./registration">Зарегистрироваться</a>
-          <a class="hed-link-singup" href="./index">Войти</a>
+          <a class="hed-link-singup" href="./">Войти</a>
         <?php } ?>
         <?php if (isset($_SESSION['user'])) { ?>
           <a class="hed-link-singin" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
