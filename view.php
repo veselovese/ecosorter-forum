@@ -86,7 +86,7 @@ session_start();
                 <form class='news-line__form' action='./reply' method='post'>
                   <textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..' required></textarea>
                   <button class='news-line__button' type='submit'>Ответить</button>
-                  <input type='hidden' name='reply_id' value='$i'>
+                  <input type='hidden' name='reply_id' value='<?=$i?>'>
                 </form>
               <?php } ?>
           <?php

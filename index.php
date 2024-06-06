@@ -80,7 +80,9 @@ session_start();
                             echo "<div class='news-line__item'>";
                             echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
                             echo "<p class='news-line__message'>" . $message . "</p>";
-                            echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
+                            if ($hashtag_name != null) {
+                                echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
+                              }
                             echo "</div>";
                         }
                     } else {
