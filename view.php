@@ -130,7 +130,7 @@ session_start();
               <button class="message__btn" type="submit">Добавить запись</button>
               <?php
               if (isset($_SESSION['message'])) {
-                echo '<p  style="font-size: 1.6rem;" class="msg"> ' . var_dump($_SESSION['message']) . ' </p>';
+                echo '<p  style="font-size: 1.6rem;" class="msg"> ' . $_SESSION['message'] . ' </p>';
                 unset($_SESSION['message']);
               }
               ?>

@@ -6,7 +6,6 @@ $userid = $_SESSION['user']['id'];
 $text = $_POST["post"];
 
 preg_match_all('/#\w+/', $text, $matches);
-// $_SESSION['message'] = $matches[0];
 $hashtags = $matches[0];
 if ($hashtags == null) {
     $hashtags = ['all'];
