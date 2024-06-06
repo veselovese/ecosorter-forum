@@ -27,7 +27,8 @@ session_start();
                     <a class="hed-link-singup" href="./">Войти</a>
                 <?php } ?>
                 <?php if (isset($_SESSION['user'])) { ?>
-                    <a class="hed-link" href="./profile">Профиль</a>
+                    <a class="hed-link-singin" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
+                    <a class="hed-link-singup" href="./logout">Выйти</a>
                 <?php } ?>
             </nav>
         </div>
@@ -39,21 +40,21 @@ session_start();
                 <div class="singin-form-inputs">
                     <div>
                         <label>Имя:
-                            <input class="input" type="text" name="name" placeholder="Введите имя" required>
+                            <input class="input" type="text" name="name" placeholder="Торт" required>
                         </label>
                         <label>Логин:
-                            <input class="input" type="text" name="login" placeholder="Введите логин" required>
+                            <input class="input" type="text" name="login" placeholder="tortfromhell666" required>
                         </label>
                         <label>Email:
-                            <input class="input" type="email" name="email" placeholder="Введите email" required>
+                            <input class="input" type="email" name="email" placeholder="twittort@example.com" required>
                         </label>
                     </div>
                     <div>
                         <label>Пароль:
-                            <input class="input" type="password" name="password" placeholder="Введите пароль" required minlength="8">
+                            <input class="input" type="password" name="password" placeholder="Q93Jbfpqf!3" required minlength="8">
                         </label>
                         <label>Подтвердите пароль:
-                            <input class="input" type="password" name="password_confirm" placeholder="Подтвердите пароль" required minlength="8">
+                            <input class="input" type="password" name="password_confirm" placeholder="Q93Jbfpqf!3" required minlength="8">
                         </label>
                         <div id="buttons">
                             <button type="submit">Зарегистрироваться</button>

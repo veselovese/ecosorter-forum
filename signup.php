@@ -25,7 +25,7 @@ if (!preg_match('/^(?=.*[A-Za-z])(?=.*[0-9])(?=.*).{8,}$/', $password) or strlen
 
     $password = md5($password);
 
-    mysqli_query($connect, "INSERT INTO `users` (`id`, `name`, `login`, `email`, `password`) VALUES (NULL, '$name', '$login', '$email', '$password')");
+    mysqli_query($connect, "INSERT INTO `users` (`id`, `name`, `login`, `email`, `password`, `avatar`) VALUES (NULL, '$name', '$login', '$email', '$password', 'noavatar.jpg')");
 
     $_SESSION['message'] = 'Регистрация прошла успешно!';
     header('Location: ./');

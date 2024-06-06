@@ -78,12 +78,18 @@ session_start();
               echo "<div class='news-line__item'>";
               echo "<p class='news-line__user' style='color: var(--link-color);'>@" . $sender . "</p>";
               echo "<p class='news-line__message'>" . $message . "</p>";
-              echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
-              echo "<form class='news-line__form' action='./reply' method='post'>";
-              echo "<textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..' required></textarea>";
-              echo "<button class='news-line__button' type='submit'>Ответить</button>";
-              echo "<input type='hidden' name='reply_id' value='$i'>";
-              echo "</form>";
+              if ($hashtag_name != null) {
+                echo "<p class='news-line__hashtag'>#" . $hashtag_name . "</p>";
+              }
+          ?>
+              <?php if (isset($_SESSION['user'])) { ?>
+                <form class='news-line__form' action='./reply' method='post'>
+                  <textarea class='news-line__input' type='text' name='reply' placeholder='Ответить..' required></textarea>
+                  <button class='news-line__button' type='submit'>Ответить</button>
+                  <input type='hidden' name='reply_id' value='$i'>
+                </form>
+              <?php } ?>
+          <?php
               echo "</div>";
               $sql_reply = "SELECT replies.description AS reply, users.login AS replier, replies.reply_id AS who
               FROM replies
@@ -124,7 +130,7 @@ session_start();
               <button class="message__btn" type="submit">Добавить запись</button>
               <?php
               if (isset($_SESSION['message'])) {
-                echo '<p  style="font-size: 1.6rem;" class="msg"> ' . $_SESSION['message'] . ' </p>';
+                echo '<p  style="font-size: 1.6rem;" class="msg"> ' . var_dump($_SESSION['message']) . ' </p>';
                 unset($_SESSION['message']);
               }
               ?>
