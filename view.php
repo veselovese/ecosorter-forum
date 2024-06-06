@@ -50,7 +50,7 @@ session_start();
         </li>
       </ul>
     </section>
-    <section class="news-line section wrapper">
+    <section class="news-line wrapper">
       <div class="new-line-div">
         <ul class="news-line__list">
           <?php
