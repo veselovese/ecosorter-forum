@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Профиль</title>
+    <title>Профиль Twittort</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="pic/icon/apple-touch-icon.png">
@@ -35,7 +35,7 @@ session_start();
     </header>
 
     <main>
-        <section class="section wrapper">
+        <section class="section log wrapper">
             <?php if (!isset($_SESSION['user'])) { ?>
                 <p>Вы вышли, надо <a class="" href="./">войти</a></p>
             <?php } ?>
@@ -51,6 +51,7 @@ session_start();
                     </form> -->
                         <div>
                             <a href="./view?channel=all" class="button">Написать пост</a>
+                            <a class="hed-link-singup" href="./logout">Выйти</a>
                         </div>
                     </div>
                     <div class="prof-right">

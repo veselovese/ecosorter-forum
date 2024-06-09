@@ -9,7 +9,7 @@ session_start();
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="css/main.css">
-  <title>Посты</title>
+  <title>Посты в Twittort</title>
   <link rel="stylesheet" href="css/main.css">
   <link rel="apple-touch-icon" sizes="180x180" href="pic/icon/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="pic/icon/favicon-32x32.png">
@@ -27,8 +27,8 @@ session_start();
           <a class="hed-link-singup" href="./">Войти</a>
         <?php } ?>
         <?php if (isset($_SESSION['user'])) { ?>
-          <a class="hed-link-singin" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
-          <a class="hed-link-singup" href="./logout">Выйти</a>
+          <a class="hed-link-prof" href="./profile">@<?= $_SESSION['user']['login'] ?></a>
+          <a class="hed-link-singout" href="./logout">Выйти</a>
         <?php } ?>
       </nav>
     </div>

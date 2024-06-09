@@ -8,7 +8,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Регистрация</title>
+    <title>Регистрация в Twittort</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="pic/icon/apple-touch-icon.png">
@@ -35,7 +35,7 @@ session_start();
     </header>
 
     <main>
-        <section class="section wrapper">
+        <section class="section log wrapper">
             <form class="singin-form" action="./signup" method="post">
                 <div class="singin-form-inputs">
                     <div>
