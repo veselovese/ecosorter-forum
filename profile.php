@@ -7,7 +7,7 @@ session_start();
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Профиль Twittort</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/main.css">
@@ -55,7 +55,7 @@ session_start();
                         </div>
                     </div>
                     <div class="prof-right">
-                        <p class="p">Вот это вы настрочили</p>
+                        <p class="p-prof">Вот это вы настрочили</p>
                         <ul class="news-line__list">
                             <?php
                             require('connect.php');

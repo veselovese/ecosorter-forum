@@ -10,7 +10,7 @@ RewriteCond %{REQUEST_FILENAME}.php -f
 RewriteRule ^ %{REQUEST_URI}.php [NC,L]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.html\ HTTP/
-RewriteRule ^index\.html$ http://http://g93150gt.beget.tech/ [R=301,L]
+RewriteRule ^index\.html$ http://http://forum.ecosorter.ru/ [R=301,L]
 
 RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /index\.php\ HTTP/
-RewriteRule ^index\.php$ http://http://g93150gt.beget.tech/ [R=301,L]
+RewriteRule ^index\.php$ http://http://forum.ecosorter.ru/ [R=301,L]
