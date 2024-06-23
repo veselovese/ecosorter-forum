@@ -37,7 +37,7 @@ session_start();
     <section class="post section wrapper">
       <ul class="post__list">
         <li class="post__item">
-          <a class="post__link <?php if ($_GET['channel'] == 'all') echo 'active'; ?>" href="view.php?channel=all">Все</a>
+          <a class="post__link <?php if ($_GET['channel'] == 'all') echo 'active'; ?>" href="view?channel=all">Все</a>
         </li>
         <li class="post__item">
           <a class="post__link <?php if ($_GET['channel'] == 'style') echo 'active'; ?>" href="?channel=style">Стиль</a>
