@@ -10,7 +10,6 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title>Регистрация в Twittort</title>
     <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/main.css">
     <link rel="apple-touch-icon" sizes="180x180" href="pic/icon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="pic/icon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="pic/icon/favicon-16x16.png">
@@ -49,14 +48,15 @@ session_start();
                             <input class="input" type="email" name="email" placeholder="twittort@example.com" required>
                         </label>
                     </div>
-                    <div>
+                    <div id="div-pass">
                         <label>Пароль:
-                            <input class="input" type="password" name="password" placeholder="Q93Jbfpqf!3" required minlength="8">
+                            <input class="input-pass1" type="password" name="password" placeholder="Q93Jbfpqf!3" required minlength="8">
+                            <span class="small">Минимум 8 символов и только латинские буквы. Обязательно наличие цифры и символа ! или ?</span>
                         </label>
-                        <label>Подтвердите пароль:
-                            <input class="input" type="password" name="password_confirm" placeholder="Q93Jbfpqf!3" required minlength="8">
+                        <label>
+                            <input class="input-pass2" type="password" name="password_confirm" placeholder="Введите пароль ещё раз" required minlength="8">
                         </label>
-                        <div id="buttons">
+                        <div id="buttons" class="reg">
                             <button type="submit">Зарегистрироваться</button>
                             <a class="link" href="./">Войти</a>
                         </div>

@@ -679,6 +679,27 @@ textarea {
     object-fit: cover;
 }
 
+.small {
+    font-size: 1rem;
+    font-weight: 400;
+    display: inline-block;
+    padding: 0 2rem;
+    line-height: 118.5%;
+    margin-top: 0.5rem;
+}
+
+#div-pass {
+    gap: 0;
+}
+
+.input-pass2 {
+    margin-top: 1.4rem;
+}
+
+#buttons.reg {
+    margin-top: 4.35rem;
+}
+
 @media (max-width: 1270px) {
     .wrapper {
         padding-left: 1.6rem;
@@ -800,6 +821,10 @@ textarea {
 }
 
 @media (max-width: 570px) {
+    #buttons.reg {
+        margin-top: 2rem;
+    }
+
     .hed-link-singup {
         font-size: 1rem;
         padding: 1rem 2.6rem;
@@ -885,3 +910,5 @@ textarea {
         border: transparent;
     }
 }
+
+
